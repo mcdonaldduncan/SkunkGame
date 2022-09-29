@@ -20,7 +20,6 @@ namespace Skunk
     /// </summary>
     public partial class MainWindow : Window
     {
-        
         public MainWindow()
         {
             InitializeComponent();
@@ -28,7 +27,6 @@ namespace Skunk
             AssignTotals();
             WriteGameType();
         }
-
         
         Game game = new Game();
 
@@ -65,11 +63,10 @@ namespace Skunk
         private void EndturnButton_Click(object sender, RoutedEventArgs e)
         {
             game.NextTurn();
+            WriteScore(game.EndTurnText());
             AssignTotals();
             Win();
             WriteTurn();
-
-
         }
 
         public void AssignTotals()
@@ -103,7 +100,7 @@ namespace Skunk
         {
             if (b)
             {
-                roundscoreblock.Text = "Three skunks, next turn!";
+                roundscoreblock.Text = "Three skunks. Next player, you're up!";
                 
             }
         }
@@ -125,7 +122,7 @@ namespace Skunk
         {
             if (b)
             {
-                roundscoreblock.Text = "Maximum round score reached, next turn.";
+                roundscoreblock.Text = "Maximum round score reached. Next player, you're up!";
             }
         }
 

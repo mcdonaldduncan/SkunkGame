@@ -106,5 +106,15 @@ namespace Skunk
                 gametype = true;
             }
         }
+
+        public string EndTurnText()
+        {
+            if (playerturn)
+            {
+                return "Player1, it's your turn!";
+            }
+
+            return "Player2, it's your turn!";
+        }
     }
 }
